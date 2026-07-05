@@ -1,0 +1,21 @@
+{
+	imports = [
+		./niri
+		./micro
+		./ironbar
+		./stylix
+		./alacritty
+		./tofi
+		./tofi/powermenu.nix
+		./mako
+		./zsh
+		./oh-my-posh
+		./helium
+		./btop
+		./zed
+		./yazi
+		./google-chrome
+		./hyprlock
+		./ssh
+	];
+}
