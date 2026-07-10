@@ -29,7 +29,7 @@ in
     autoEnable = true;
     polarity = "dark";
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kimber.yaml";
 
     image = compiledWallpaper;
 

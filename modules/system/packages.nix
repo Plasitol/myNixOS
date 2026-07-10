@@ -12,6 +12,9 @@
 	 eza
 	 awww
 	 xwayland-satellite
+	 ripdrag
+	 ripgrep
+	 fastfetch
 
 	 sops
 	 age

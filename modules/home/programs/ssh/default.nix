@@ -15,6 +15,7 @@
     };
   };
 
+
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;  # больше не полагаемся на скрытые дефолты
@@ -22,7 +23,7 @@
     settings = {
       "mlSrv" = {
         hostname = "109.195.87.247";
-        user = "deploy";
+        user = "deployuser";
         port = 22;
         identityFile = config.sops.secrets."ssh_id_mlsrv".path;
         identitiesOnly = true;

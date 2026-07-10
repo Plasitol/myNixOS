@@ -56,6 +56,8 @@
 
 	nixpkgs.config.allowUnfree = true;
 
+	sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+
 	systemd.services.NetworkManager-wait-online.enable = false;
 	services.auto-cpufreq.enable = true;
 	services.thermald.enable = true;

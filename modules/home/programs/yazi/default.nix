@@ -1,9 +1,54 @@
 { config, pkgs, ... }:
+
 {
+  xdg.desktopEntries.yazi = {
+    name = "Yazi";
+    genericName = "Terminal File Manager";
+    exec = "alacritty -e yazi %f";
+    terminal = false;
+    type = "Application";
+    mimeType = [ "inode/directory" ];
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications."inode/directory" = [ "yazi.desktop" ];
+  };
+
   programs.yazi = {
     enable = true;
     shellWrapperName = "y";
     enableZshIntegration = true;
+
+    plugins = {
+      drag = pkgs.yaziPlugins.drag;
+    };
+
+    keymap = {
+      mgr.prepend_keymap = [
+        {
+          on = [ "<A-e>" ];
+          run = ''shell 'ripdrag --icon-size 64 "$@"' --orphan'';
+          desc = "Drag out (в Chrome/Zed/куда угодно)";
+        }
+        {
+          on = [ "<A-i>" ];
+          run = ''shell 'ripdrag --target --and-exit --icon-size 64 "$@" | while read -r f; do cp -nR -- "$f" .; done' --block'';
+          desc = "Принять файл, перетащенный извне, в текущую папку";
+        }
+        {
+          on = [ "z" ];
+          run = ''shell 'zeditor "$@"' --orphan'';
+          desc = "Открыть выделенное в Zed";
+        }
+        {
+          on = [ "<C-y>" ];
+          run = "plugin drag-copy";
+          desc = "Drag & copy in";
+        }
+      ];
+    };
+
     settings = {
       yazi = {
         ratio = [
@@ -22,9 +67,9 @@
 
       opener = {
          edit = [ {
-           run = "zeditor %s";
-           block = true; }
-         ];
+           run = "micro %s";
+           block = true;
+         } ];
       };
 
       preview = {
