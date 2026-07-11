@@ -28,6 +28,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mango = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     helium = {
       url = "github:schembriaiden/helium-browser-nix-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -53,6 +58,7 @@
   stylix,
   zapret,
   niri-flake,
+  mango,
   helium,
   ironbar,
   sops-nix,
@@ -81,11 +87,17 @@
 		    niri-flake.overlays.niri
 		    inputs.helium.overlays.default
 		    ]; }
+
 		  niri-flake.nixosModules.niri
+
+		  mango.nixosModules.mango
 
 		  ({ pkgs, ... }: {
 		   programs.niri.enable = true;
 		   #programs.niri.package = pkgs.niri-unstable; #stable/unstable ветка
+
+		   programs.mango.enable = true;
+		   programs.mango.addLoginEntry = true;
 		  })
 
           stylix.nixosModules.stylix
@@ -112,6 +124,7 @@
             home-manager.sharedModules = [
               ironbar.homeManagerModules.default
               sops-nix.homeManagerModules.sops
+              mango.hmModules.mango
             ];
           }
         ];

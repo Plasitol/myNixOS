@@ -1,6 +1,7 @@
 {
 	imports = [
 		./niri
+		./mango
 		./micro
 		./ironbar
 		./stylix

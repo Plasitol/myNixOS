@@ -126,33 +126,34 @@
     # consume-or-expel-window-left/right -> scroller_stack (раскладка scroller).
     # Направления сопоставлены по смыслу, но советую перепроверить руками —
     # это самое "приблизительное" место во всём переносе.
-    "SUPER,bracketleft,scroller_stack,left"
-    "SUPER,bracketright,scroller_stack,right"
+    #"SUPER,bracketleft,scroller_stack,left"
+    #"SUPER,bracketright,scroller_stack,right"
 
     # consume-window-into-column / expel-window-from-column — та же механика,
     # что и bracketleft/right выше в scroller-раскладке mango, отдельных
     # диспетчеров под "consume именно в column" / "expel именно из column" нет.
-    "SUPER,comma,scroller_stack,left"
-    "SUPER,period,scroller_stack,right"
+    #"SUPER,comma,scroller_stack,left"
+    #"SUPER,period,scroller_stack,right"
 
     # switch-preset-window-height / reset-window-height — НЕТ АНАЛОГА
     # (в mango нет отдельного измерения "высота окна" вне master/stack factor).
 
-    "SUPER+SHIFT,F,togglefullscreen"
+    #"SUPER+SHIFT,F,togglefullscreen"
 
     # expand-column-to-available-width — ближайшее в scroller: full width
-    "SUPER+CTRL,F,set_proportion,1.0"
+    #"SUPER,F,togglemaximizescreen"      # настоящий полноэкранный (с учётом бара/декораций)
+    #"SUPER+CTRL,F,set_proportion,1.0"   # «мягкое» расширение колонки scroller
 
     # set-column-width ±10% — в mango нет относительного "+/-10%" для scroller,
     # только abсолютный set_proportion и циклический switch_proportion_preset.
     # Используем пресеты вместо continuous-резайза:
-    "SUPER,minus,switch_proportion_preset"
-    "SUPER,equal,switch_proportion_preset"
+    #"SUPER,minus,switch_proportion_preset"
+    #"SUPER,equal,switch_proportion_preset"
 
     # set-window-height ±10% — НЕТ АНАЛОГА, ближайшее по духу это setmfact
     # для master-stack раскладок:
-    "SUPER+SHIFT,minus,setmfact,-0.05"
-    "SUPER+SHIFT,equal,setmfact,+0.05"
+    #"SUPER+SHIFT,minus,setmfact,-0.05"
+    #"SUPER+SHIFT,equal,setmfact,+0.05"
 
     # switch-focus-between-floating-and-tiling — НЕТ АНАЛОГА.
 
@@ -168,6 +169,26 @@
     # power-off-monitors — нет одной команды "выключить все", используем
     # wlr-dpms (нужно установить пакет wlr-dpms):
     "SUPER+SHIFT,P,spawn,wlr-dpms off"
+
+
+    "SUPER,R,dwindle_toggle_split_direction"   # поменять направление следующего сплита
+    "SUPER,comma,dwindle_split_horizontal"     # форсировать горизонтальный сплит
+    "SUPER,period,dwindle_split_vertical"      # форсировать вертикальный сплит
+
+    "SUPER,bracketleft,exchange_stack_client,prev"
+    "SUPER,bracketright,exchange_stack_client,next"
+
+    "SUPER,minus,incgaps,-2"
+    "SUPER,equal,incgaps,+2"
+    "SUPER+SHIFT,G,togglegaps"
+
+    # --- живое переключение раскладок ---
+    "SUPER,N,switch_layout"          # цикл по circle_layout
+    "SUPER+ALT,D,setlayout,dwindle"
+    "SUPER+ALT,T,setlayout,tile"
+    "SUPER+ALT,S,setlayout,scroller"
+    "SUPER+ALT,M,setlayout,monocle"
+    "SUPER+ALT,G,setlayout,grid"
   ];
 
   # Прокрутка колёсиком мыши (niri Mod+WheelScrollDown/Up и т.п.)

@@ -9,17 +9,16 @@
     # ты, судя по всему, просто плыл на дефолтной раскладке niri)
     # -----------------------------------------------------------------------
     tagrule = [
-      "id:1,layout_name:scroller"
-      "id:2,layout_name:scroller"
-      "id:3,layout_name:scroller"
-      "id:4,layout_name:scroller"
-      "id:5,layout_name:scroller"
-      "id:6,layout_name:scroller"
-      "id:7,layout_name:scroller"
-      "id:8,layout_name:scroller"
-      "id:9,layout_name:scroller"
+      "id:1,layout_name:dwindle"
+      "id:2,layout_name:dwindle"
+      "id:3,layout_name:dwindle"
+      "id:4,layout_name:dwindle"
+      "id:5,layout_name:dwindle"
+      "id:6,layout_name:dwindle"
+      "id:7,layout_name:dwindle"
+      "id:8,layout_name:dwindle"
+      "id:9,layout_name:dwindle"
     ];
-
     # -----------------------------------------------------------------------
     # Window rules
     # -----------------------------------------------------------------------

@@ -10,7 +10,7 @@ in
     enable = true;
   };
 
-  services.displayManager.defaultSession = "niri";
+  services.displayManager.defaultSession = "mango";
 
   stylix.targets.gnome.enable = true;
 }

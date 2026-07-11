@@ -31,16 +31,36 @@ in
     # niri: gestures.hot-corners.enable = false
     enable_hotarea = 0;
 
+    dwindle_split_ratio       = 0.5;   # ratio нового сплита
+    dwindle_smart_split       = 1;     # направление сплита по пропорциям окна
+    dwindle_preserve_split    = 1;     # сохранять точку раздела при закрытии окна
+    dwindle_smart_resize      = 1;     # умный ресайз соседей
+    dwindle_drop_simple_split = 1;
+
+    circle_layout = "dwindle,tile,scroller,monocle,grid"; # порядок для switch_layout
+
     # ---------------------------------------------------------------------
     # Animations (niri: animations.slowdown = 1.9 — в mango нет общего
     # множителя, поэтому дефолтные длительности домножены на ~1.9 вручную.
     # Крути под себя.)
     # ---------------------------------------------------------------------
-    animations = 1;
-    animation_duration_open  = 760;  # default 400 * 1.9
-    animation_duration_close = 1520; # default 800 * 1.9
-    animation_duration_move  = 950;  # default 500 * 1.9
-    animation_duration_tag   = 665;  # default 350 * 1.9
+
+    animations = 1;                 # или 0, если хочешь совсем без анимаций
+    # layer_animations = 0;
+    animation_type_open  = "fade";
+    animation_type_close = "fade";
+    layer_animation_type_open  = "fade";
+    layer_animation_type_close = "fade";
+
+    animation_duration_open  = 120;
+    animation_duration_close = 120;
+    animation_duration_move  = 100;
+    animation_duration_tag   = 100;
+
+    animation_fade_in  = 1;
+    animation_fade_out = 1;
+    fadein_begin_opacity  = 0.85;   # чем ближе к 1.0, тем незаметнее fade
+    fadeout_begin_opacity = 0.85;
 
     # ---------------------------------------------------------------------
     # Layout defaults — аналог niri layout.default-column-width /
@@ -49,6 +69,7 @@ in
     default_mfact = 0.5;
     scroller_default_proportion  = 0.5;   # niri default-column-width proportion
     scroller_proportion_preset   = "0.33333,0.5,0.66667"; # niri preset-column-widths
+    scroller_structs = 0;
 
     # ---------------------------------------------------------------------
     # Keyboard (niri: input.keyboard.xkb / numlock)
