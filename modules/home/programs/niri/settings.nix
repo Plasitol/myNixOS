@@ -29,6 +29,9 @@
       layout = {
         gaps = 0;
 
+        #center-focused-column = "always";
+        always-center-single-column = true;
+
         center-focused-column = "never";
 
         preset-column-widths = [
