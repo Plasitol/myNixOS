@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   xdg.desktopEntries.yazi = {
     name = "Yazi";
@@ -9,21 +8,33 @@
     type = "Application";
     mimeType = [ "inode/directory" ];
   };
-
   xdg.mimeApps = {
     enable = true;
     defaultApplications."inode/directory" = [ "yazi.desktop" ];
   };
 
+  xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
+    [filechooser]
+    cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
+    default_dir=$HOME
+    env=TERMCMD='alacritty -e'
+    env=PATH=$PATH:/run/current-system/sw/bin
+    open_mode=suggested
+    save_mode=last
+  '';
+
+  xdg.configFile."xdg-desktop-portal/portals.conf".text = ''
+    [preferred]
+    org.freedesktop.impl.portal.FileChooser=termfilechooser
+  '';
+
   programs.yazi = {
     enable = true;
     shellWrapperName = "y";
     enableZshIntegration = true;
-
     plugins = {
       drag = pkgs.yaziPlugins.drag;
     };
-
     keymap = {
       mgr.prepend_keymap = [
         {
@@ -43,8 +54,8 @@
         }
         {
           on = [ "<C-y>" ];
-          run = "plugin drag-copy";
-          desc = "Drag & copy in";
+          run = ''shell 'ripdrag --target --and-exit --icon-size 64 "$@" | while read -r f; do cp -nR -- "$f" .; done' --orphan'';
+          desc = "Drag & copy in (в фоне)";
         }
         {
           on   = [ "g" "m" ];
@@ -53,7 +64,6 @@
         }
       ];
     };
-
     settings = {
       yazi = {
         ratio = [
@@ -69,14 +79,12 @@
         show_hidden = true;
         show_symlink = true;
       };
-
       opener = {
          edit = [ {
            run = "micro %s";
            block = true;
          } ];
       };
-
       preview = {
         image_filter = "lanczos3";
         image_quality = 90;
@@ -92,7 +100,6 @@
           0
         ];
       };
-
       tasks = {
         micro_workers = 5;
         macro_workers = 10;

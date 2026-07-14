@@ -28,10 +28,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    helium = {
-      url = "github:schembriaiden/helium-browser-nix-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  #  helium = {
+  #    url = "github:schembriaiden/helium-browser-nix-flake";
+  #    inputs.nixpkgs.follows = "nixpkgs";
+  #  };
 
     ironbar = {
       url = "github:JakeStanger/ironbar";
@@ -58,7 +58,7 @@
   stylix,
   # zapret,
   niri-flake,
-  helium,
+  # helium,
   ironbar,
   sops-nix,
   kompas-3d,
@@ -85,17 +85,22 @@
           # не появится в списке сессий на логин-экране.
 		  { nixpkgs.overlays = [
 		    niri-flake.overlays.niri
-		    inputs.helium.overlays.default
+		    # inputs.helium.overlays.default
 		    ]; }
 		  niri-flake.nixosModules.niri
 
 		  kompas-3d.nixosModules.grdcontrol
 
+      #НЕБЕЗОПАСНО
+		  { nixpkgs.config.permittedInsecurePackages = [
+		    "pnpm-9.15.9"
+		  ]; }
+
 		  ({ pkgs, ... }: {
 		   programs.niri.enable = true;
 		   #programs.niri.package = pkgs.niri-unstable; #stable/unstable ветка
 
-		   services.grdcontrol.enable = true;
+		   #services.grdcontrol.enable = true;
 		   environment.systemPackages = [ kompas-3d.packages.${system}.kompas3d ];
 		  })
 

@@ -30,7 +30,7 @@
 	 qimgv
 	 vlc
 	 obsidian
-	 inputs.kompas-3d.packages.${pkgs.stdenv.hostPlatform.system}.kompas3d
+	 # inputs.kompas-3d.packages.${pkgs.stdenv.hostPlatform.system}.kompas3d
   ];
 
   # Fonts
