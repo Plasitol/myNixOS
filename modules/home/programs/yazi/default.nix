@@ -46,6 +46,11 @@
           run = "plugin drag-copy";
           desc = "Drag & copy in";
         }
+        {
+          on   = [ "g" "m" ];
+          run  = "cd /run/media";
+          desc = "Перейти к смонтированным флешкам (Go to Media)";
+        }
       ];
     };
 

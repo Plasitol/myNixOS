@@ -13,10 +13,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-	  zapret = {
-      url = "github:kartavkun/zapret-discord-youtube";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+	 # zapret = {
+   #   url = "github:kartavkun/zapret-discord-youtube";
+   #   inputs.nixpkgs.follows = "nixpkgs";
+   # };
 
     stylix = {
       url = "github:nix-community/stylix/release-26.05";
@@ -42,6 +42,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    kompas-3d = {
+      url = "github:Plasitol/Kompas3D-v24-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -51,11 +56,12 @@
   nixpkgs-unstable,
   home-manager,
   stylix,
-  zapret,
+  # zapret,
   niri-flake,
   helium,
   ironbar,
   sops-nix,
+  kompas-3d,
   ...
 
   }@inputs:
@@ -83,14 +89,19 @@
 		    ]; }
 		  niri-flake.nixosModules.niri
 
+		  kompas-3d.nixosModules.grdcontrol
+
 		  ({ pkgs, ... }: {
 		   programs.niri.enable = true;
 		   #programs.niri.package = pkgs.niri-unstable; #stable/unstable ветка
+
+		   services.grdcontrol.enable = true;
+		   environment.systemPackages = [ kompas-3d.packages.${system}.kompas3d ];
 		  })
 
           stylix.nixosModules.stylix
 
-          zapret.nixosModules.default
+          #zapret.nixosModules.default
           #zapret.nixosModules.withTestTools
 
           sops-nix.nixosModules.sops

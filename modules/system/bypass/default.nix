@@ -1,6 +1,6 @@
 {
 	imports = [
-		./zapret
+		#./zapret
 		./singbox
 		./singbox/control.nix
 	];

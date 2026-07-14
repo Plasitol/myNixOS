@@ -7,6 +7,7 @@
   environment.systemPackages = with pkgs; [
     gvfs
     dbus
+    udiskie
   ];
 
   services.udisks2.enable = true;

@@ -56,6 +56,8 @@
 
 	nixpkgs.config.allowUnfree = true;
 
+	nix.extraOptions = "warn-dirty = false";
+
 	sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
 	systemd.services.NetworkManager-wait-online.enable = false;

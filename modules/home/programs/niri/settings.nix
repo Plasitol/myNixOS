@@ -38,6 +38,7 @@
           { "proportion" = 0.33333; }
           { "proportion" = 0.5; }
           { "proportion" = 0.66667; }
+          { "proportion" = 1.0; }
         ];
 
         default-column-width = {
@@ -107,7 +108,7 @@
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
 
       animations = {
-        slowdown = 1.9;
+        slowdown = 1.3;
       };
 
       overview = {

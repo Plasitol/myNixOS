@@ -54,14 +54,14 @@
       "wpctl"
       "set-volume"
       "@DEFAULT_AUDIO_SINK@"
-      "0.1+"
+      "0.01+"
     ];
     "XF86AudioRaiseVolume".allow-when-locked = true;
     "XF86AudioLowerVolume".action = spawn [
       "wpctl"
       "set-volume"
       "@DEFAULT_AUDIO_SINK@"
-      "0.1-"
+      "0.01-"
     ];
     "XF86AudioLowerVolume".allow-when-locked = true;
     "XF86AudioMute".action = spawn [

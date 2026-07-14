@@ -27,12 +27,12 @@ in
         on_click_left = "menu";
         on_click_left_double = "default";
       }
-      {
-        type = "launcher";
-        show_names = false;
-        show_icons = true;
-        reversed = false;
-      }
+      #{
+      #  type = "launcher";
+      #  show_names = false;
+      #  show_icons = true;
+      #  reversed = false;
+      #}
       ];
 
       end = [
