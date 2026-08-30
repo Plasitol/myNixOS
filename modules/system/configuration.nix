@@ -11,6 +11,7 @@
 		./bypass
 		./packages.nix
 		./stylix.nix
+		./samba
 	];
 
 	nix.settings.experimental-features = [

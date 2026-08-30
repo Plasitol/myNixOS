@@ -16,7 +16,7 @@
 	 awww
 	 ripgrep
 	 fastfetch
-	 samba
+	 tree
 
    # Slices
 	 ripdrag
