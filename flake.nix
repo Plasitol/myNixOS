@@ -13,10 +13,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-	 # zapret = {
-   #   url = "github:kartavkun/zapret-discord-youtube";
-   #   inputs.nixpkgs.follows = "nixpkgs";
-   # };
+	  zapret = {
+      url = "github:kartavkun/zapret-discord-youtube";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     stylix = {
       url = "github:nix-community/stylix/release-26.05";
@@ -28,10 +28,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-  #  helium = {
-  #    url = "github:schembriaiden/helium-browser-nix-flake";
-  #    inputs.nixpkgs.follows = "nixpkgs";
-  #  };
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     ironbar = {
       url = "github:JakeStanger/ironbar";
@@ -56,9 +56,9 @@
   nixpkgs-unstable,
   home-manager,
   stylix,
-  # zapret,
+  zapret,
   niri-flake,
-  # helium,
+  helium,
   ironbar,
   sops-nix,
   kompas-3d,
@@ -85,7 +85,7 @@
           # не появится в списке сессий на логин-экране.
 		  { nixpkgs.overlays = [
 		    niri-flake.overlays.niri
-		    # inputs.helium.overlays.default
+		    inputs.helium.overlays.default
 		    ]; }
 		  niri-flake.nixosModules.niri
 
@@ -107,7 +107,7 @@
           stylix.nixosModules.stylix
 
           #zapret.nixosModules.default
-          #zapret.nixosModules.withTestTools
+          zapret.nixosModules.withTestTools
 
           sops-nix.nixosModules.sops
 

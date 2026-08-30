@@ -21,7 +21,7 @@
 
     nvidiaSettings = true; # ставит nvidia-settings GUI
 
-    powerManagement.enable = false; # десктоп без батареи
+    powerManagement.enable = true; # десктоп без батареи
   };
 
   # Переменные окружения для корректной работы Wayland-композиторов и Electron-приложений с NVIDIA

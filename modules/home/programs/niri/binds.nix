@@ -13,22 +13,11 @@
       "tofi-drun"
       "--drun-launch=true"
     ];
-    "Mod+V".action = spawn [
-      "noctalia-shell"
-      "ipc"
-      "call"
-      "launcher"
-      "clipboard"
-    ];
-    "Mod+A".action = spawn [
-      "noctalia-shell"
-      "ipc"
-      "call"
-      "wallpaper"
-      "toggle"
-    ];
     "Mod+P".action = spawn [
       "tofi-powermenu"
+    ];
+    "Mod+A".action = spawn [
+      "obsidian"
     ];
     "Mod+C".action = spawn [
       "zsh"
@@ -42,7 +31,7 @@
       "-e"
       "yazi"
     ];
-    "Mod+B".action = spawn [ "google-chrome-stable" ];
+    "Mod+B".action = spawn [ "helium" ];
 
     "Mod+F".action = maximize-column;
     "Mod+R".action = switch-preset-column-width;

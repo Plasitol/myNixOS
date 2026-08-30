@@ -16,6 +16,7 @@
 	 awww
 	 ripgrep
 	 fastfetch
+	 samba
 
    # Slices
 	 ripdrag
@@ -30,7 +31,9 @@
 	 qimgv
 	 vlc
 	 obsidian
+	 cinny-desktop
 	 # inputs.kompas-3d.packages.${pkgs.stdenv.hostPlatform.system}.kompas3d
+	 gimp
   ];
 
   # Fonts

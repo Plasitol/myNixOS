@@ -11,6 +11,7 @@
       in
       {
         nixup = "sudo nixos-rebuild switch --flake ${flakeDir}#nixos && sudo rm -rf ~/.cache/tofi-drun";
+        nixupvpn = "sudo -E env https_proxy=http://127.0.0.1:1080 http_proxy=http://127.0.0.1:1080 nixos-rebuild switch --flake ${flakeDir}#nixos && sudo rm -rf ~/.cache/tofi-drun";
         nixupd = "nix flake update --flake ${flakeDir}";
         nixupg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}#nixos";
         nixconf = "micro ${flakeDir}modules/system/configuration.nix";

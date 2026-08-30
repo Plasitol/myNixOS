@@ -10,7 +10,7 @@
 		./mako
 		./zsh
 		./oh-my-posh
-		# ./helium
+		./helium
 		./btop
 		./zed
 		./yazi

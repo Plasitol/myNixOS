@@ -45,16 +45,16 @@
         }
         {
           matches = [
-            { app-id = "zen"; }
+            { app-id = "helium"; }
             { app-id = "firefox"; }
             { app-id = "chromium-browser"; }
             { app-id = "xdg-desktop-portal-gtk"; }
           ];
-          scroll-factor = 0.5;
+          scroll-factor = 1.0;
         }
         {
           matches = [
-            { app-id = "zen"; }
+            { app-id = "helium"; }
             { app-id = "firefox"; }
             { app-id = "chromium-browser"; }
             { app-id = "edge"; }
@@ -71,7 +71,7 @@
         {
           matches = [
             {
-              app-id = "firefox";
+              app-id = "helium";
               title = "Picture-in-Picture";
             }
           ];
