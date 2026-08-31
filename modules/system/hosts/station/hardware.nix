@@ -18,8 +18,11 @@
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/9489a728-d39c-47d4-a2fb-fbf0a1489731"; }
+    { device = "/dev/disk/by-uuid/9489a728-d39c-47d4-a2fb-fbf0a1489731";
+      options = [ "nofail"  "x-systemd.device-timeout=10s" ]; }
   ];
+
+  mySystem.resumeDevice = "/dev/disk/by-uuid/9489a728-d39c-47d4-a2fb-fbf0a1489731";
 
   networking.useDHCP = lib.mkDefault true;
 }

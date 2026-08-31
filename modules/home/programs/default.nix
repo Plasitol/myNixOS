@@ -14,7 +14,7 @@
 		./btop
 		./zed
 		./yazi
-		./google-chrome
+		#./google-chrome
 		./hyprlock
 		./ssh
 	];

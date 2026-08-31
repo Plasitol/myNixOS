@@ -17,6 +17,8 @@
 	 ripgrep
 	 fastfetch
 	 tree
+	 fzf
+	 glib
 
    # Slices
 	 ripdrag

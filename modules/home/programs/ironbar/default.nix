@@ -21,12 +21,12 @@ in
       ];
 
       center = [
-      {
-        type = "tray";
-        icon_size = 16;
-        on_click_left = "menu";
-        on_click_left_double = "default";
-      }
+      #{
+      #  type = "tray";
+      #  icon_size = 16;
+      #  on_click_left = "menu";
+      #  on_click_left_double = "default";
+      #}
       #{
       #  type = "launcher";
       #  show_names = false;
@@ -45,16 +45,28 @@ in
        #   on_click_left = "vpn-toggle";
        # }
         {
-          type = "clock";
-          name = "clock";
-          format = "%d-%m   %H:%M";
-          format_popup = "%d.%m.%Y %H:%M";
+          type = "network_manager";
+        }
+        {
+          type = "battery";
+          format = "{percentage}%";
+          profiles.charging.when.charging = true;
+          profiles.charging.format = "{percentage}%";
+          profiles.warning.when = { percent = 20; charging = false; };
+          profiles.critical.when = { percent = 10; charging = false; };
+          profiles.critical.format = "{percentage}%";
         }
         {
           type = "volume";
           name = "volume";
           format = "{percentage}%";
           max_volume = 100;
+        }
+        {
+          type = "clock";
+          name = "clock";
+          format = "%d-%m   %H:%M";
+          format_popup = "%d.%m.%Y %H:%M";
         }
       ];
     };
@@ -114,6 +126,19 @@ in
 
       .sysinfo label {
         margin-left: 10px;
+      }
+
+      .network_manager,
+      .network_manager button {
+        background-color: transparent;
+        background-image: none;
+        box-shadow: none;
+        border: none;
+      }
+
+      .network_manager {
+        padding: 0 16px;
+        color: #${c.base04};
       }
 
       .volume {

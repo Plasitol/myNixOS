@@ -66,6 +66,10 @@
       "@DEFAULT_AUDIO_SOURCE@"
       "toggle"
     ];
+
+    "XF86MonBrightnessUp".action.spawn = [ "brightnessctl" "set" "+5%" ];
+    "XF86MonBrightnessDown".action.spawn = [ "brightnessctl" "set" "5%-" ];
+
     "XF86AudioMicMute".allow-when-locked = true;
 
     "Mod+O".action = toggle-overview;
