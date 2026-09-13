@@ -19,6 +19,8 @@
         "kvm"
         "libvirtd"
         "plugdev"
+        "cups"
+        "lp"
       ];
       ignoreShellProgramCheck = true;
     };

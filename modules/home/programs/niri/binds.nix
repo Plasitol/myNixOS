@@ -33,6 +33,11 @@
     ];
     "Mod+B".action = spawn [ "helium" ];
 
+    "Mod+Insert".action = spawn [
+      "bash" "-c"
+      "grim -g \"$(slurp)\" - | satty -f - --copy-command wl-copy --output-filename ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png"
+    ];
+
     "Mod+F".action = maximize-column;
     "Mod+R".action = switch-preset-column-width;
     "Mod+T".action = toggle-window-floating;
@@ -66,6 +71,10 @@
       "@DEFAULT_AUDIO_SOURCE@"
       "toggle"
     ];
+
+    "XF86MonBrightnessUp".action.spawn = [ "brightnessctl" "set" "+5%" ];
+    "XF86MonBrightnessDown".action.spawn = [ "brightnessctl" "set" "5%-" ];
+
     "XF86AudioMicMute".allow-when-locked = true;
 
     "Mod+O".action = toggle-overview;

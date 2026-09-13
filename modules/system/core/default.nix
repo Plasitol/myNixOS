@@ -11,5 +11,6 @@
     ./polkit.nix
     ./flatpak.nix
     ./sysloging.nix
+    ./upower.nix
   ];
 }
