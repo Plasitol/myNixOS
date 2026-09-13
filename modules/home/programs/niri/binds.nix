@@ -33,6 +33,11 @@
     ];
     "Mod+B".action = spawn [ "helium" ];
 
+    "Mod+Insert".action = spawn [
+      "bash" "-c"
+      "grim -g \"$(slurp)\" - | satty -f - --copy-command wl-copy --output-filename ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png"
+    ];
+
     "Mod+F".action = maximize-column;
     "Mod+R".action = switch-preset-column-width;
     "Mod+T".action = toggle-window-floating;

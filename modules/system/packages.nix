@@ -23,6 +23,10 @@
    # Slices
 	 ripdrag
    xwayland-satellite
+   grim
+   slurp
+   satty
+   wl-clipboard
 
    # Security
 	 sops
@@ -35,7 +39,11 @@
 	 obsidian
 	 cinny-desktop
 	 # inputs.kompas-3d.packages.${pkgs.stdenv.hostPlatform.system}.kompas3d
-	 gimp
+	 kdePackages.okular
+	 peazip
+	 libreoffice
+	 furnace
+	 renoise
   ];
 
   # Fonts
