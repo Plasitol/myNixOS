@@ -43,4 +43,17 @@
 
   services.power-profiles-daemon.enable = false;
   services.fwupd.enable = true;
+
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "suspend";
+    HandleLidSwitchDocked = "suspend";
+    IdleAction = "ignore";
+  };
+
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "yes";
+    AllowHibernation = "yes";
+  };
+
 }

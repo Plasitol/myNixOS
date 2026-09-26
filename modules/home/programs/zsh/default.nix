@@ -26,6 +26,7 @@
         homeclean = "home-manager expire-generations -d";
         nixorphans = "nix store gc && sudo nix store optimize";
         nixwipe = "sudo nix profile wipe-history";
+        poweron = "sudo tlp chargeonce";
       };
 
     initContent = ''
