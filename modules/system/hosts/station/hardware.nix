@@ -19,11 +19,7 @@
 
   swapDevices = [
     { device = "/dev/disk/by-uuid/9489a728-d39c-47d4-a2fb-fbf0a1489731";
-<<<<<<< HEAD
-      options = [ "nofail" ]; }
-=======
       options = [ "nofail"  "x-systemd.device-timeout=10s" ]; }
->>>>>>> origin
   ];
 
   mySystem.resumeDevice = "/dev/disk/by-uuid/9489a728-d39c-47d4-a2fb-fbf0a1489731";
