@@ -6,7 +6,7 @@
     ./pipewire.nix
     ./bluetooth.nix
     ./bootloader.nix
-    # ./virt-manager.nix
+    ./virt-manager.nix
     ./udisk.nix
     ./polkit.nix
     ./flatpak.nix
