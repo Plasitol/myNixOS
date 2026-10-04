@@ -86,7 +86,12 @@
           desc = "Перейти к смонтированным флешкам (Go to Media)";
         }
         {
-          on   = [ "g" "n" ];
+          on   = [ "g" "s" ];
+          run  = "cd /home/plasitol/Documents/Study";
+          desc = "Учебные папки (Go to Study)";
+        }
+        {
+          on   = [ "g" "o" ];
           run  = ''shell 'ya emit cd "/run/user/$(id -u)/gvfs"' --block'';
           desc = "Перейти к папке со всеми точками монтирования gvfs";
         }

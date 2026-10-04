@@ -44,6 +44,8 @@
 	 libreoffice
 	 furnace
 	 renoise
+	 anki
+	 qbittorrent
   ];
 
   # Fonts

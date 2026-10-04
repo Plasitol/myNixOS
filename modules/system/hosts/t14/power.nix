@@ -22,9 +22,9 @@
     enable = true;
     settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "schedutil"; #powersave когда жестко / schedutil можно поработать
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave"; #powersave когда жестко / schedutil можно поработать
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power"; #power когда жестко / balance_power можно поработать
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power"; #power когда жестко / balance_power можно поработать
 
       WIFI_PWR_ON_AC = "on";
       WIFI_PWR_ON_BAT = "on";
@@ -38,6 +38,9 @@
 
       RUNTIME_PM_ON_AC = "auto";
       RUNTIME_PM_ON_BAT = "auto";
+
+      PLATFORM_PROFILE_ON_AC = "performance";
+      PLATFORM_PROFILE_ON_BAT = "low-power";
     };
   };
 
